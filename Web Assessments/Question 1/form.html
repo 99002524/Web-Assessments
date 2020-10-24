@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showData() {
+            debugger;
+            var Textdata = document.getElementById("textbox").value;
+            var x = document.getElementById("qdate").value;
+            
+            var e = document.getElementById("ddlist");
+            var strUser = e.options[e.selectedIndex].text;
+        
+            document.getElementById("p1").innerHTML = Textdata;
+            document.getElementById("p2").innerHTML = x;
+            document.getElementById("p3").innerHTML = strUser;
+            var ele = document.getElementsByName('gender'); 
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                document.getElementById("p4").innerHTML
+                        = "Gender: "+ele[i].id; 
+            } 
+        } 
+             
+    </script>
+</head>
+<body>
+    <form action="">     
+            <p><input type="text" placeholder="Enter the Text" id="textbox" /></p>
+            <p><input type="date" placeholder="Enter the Date" id="qdate" /></p>
+            <p>
+                Select the Class:<br/>
+                <select id="ddlist">
+                    <option>Class 1</option>
+                    <option>Class 2</option>
+                    <option>Class 3</option>
+                    <option>Class 4</option>
+                    <option>Class 5</option>
+                </select>
+            </p>
+            <p>
+                   Gender: <input type="radio" name="gender" id="male">Male 
+                           <input type="radio" name="gender" id="female">Female
+            </p>
+            <input type="button" value="Submit" id="btnSubmit" onclick="showData()">
+           </form>
+
+            <div>
+                <p id="p1"></p>
+                <p id="p2"></p>
+                <p id="p3"></p>
+                <p id="p4"></p>
+            </div>
+</body>
+</html>
